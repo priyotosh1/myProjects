@@ -5,24 +5,18 @@ using namespace std;
 
 int main (int argc, char **argv) {
 
-    mpz_t a,b,c;
-    mpz_inits(a,b,c,NULL);
+    mpz_t num1, num2, res;
+    mpz_inits(num1, num2, res, NULL);
 
-    mpz_set_str(a, "1234", 10);
-    mpz_set_str(b,"-5678", 10); //Decimal base
+    mpz_set_str(num1, "9999999999999999999", 10);
+    mpz_set_str(num2, "9999999999999999999", 10); //Decimal base
 
-    mpz_add(c,a,b);
+    mpz_add(res, num1, num2);
 
-    cout<<"\nThe exact result is:";
-    mpz_out_str(stdout, 10, c); //Stream, numerical base, var
+    cout<<"The exact result is:";
+    mpz_out_str(stdout, 10, res); //Stream, numerical base, var
     cout<<endl;
 
-    mpz_abs(c, c);
-    cout<<"The absolute value result is:";
-    mpz_out_str(stdout, 10, c);
-    cout<<endl;
-
-    cin.get();
 
     return 0;
 }
